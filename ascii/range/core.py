@@ -21,10 +21,10 @@ def asciiRange(start: str, end: str) -> str:
         max(startCode, endCode) + 1,
     )
 
+    if startCode >= endCode:
+        codeIterator = reversed(codeIterator)
+
     for code in codeIterator:
         result.append(chr(code))
-
-    if startCode >= endCode:
-        result.reverse()
 
     return ''.join(result)
